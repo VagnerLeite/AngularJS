@@ -1,5 +1,6 @@
+<!-- 
 <section>
-    <!--
+
     <article>
         <h3>Interpolation/Interpolação</h3>
         <p> String renderizada com interpolação: {{ url }}</p>
@@ -18,7 +19,6 @@
 
     </article> 
         
-    -->
 
     <article>
         <h3>Class and Style Binding</h3>
@@ -62,6 +62,43 @@
             </div>
 
         </div> 
+    </article>
+
+</section>
+-->
+
+<section>
+    <article>
+        <h3>Event Binding</h3>
+
+        <div>
+            <button (click)="clickedButton()"
+                class="btn btn-primary">
+                Click Me!
+            </button>
+
+            <br/><br/>
+
+            <input type="text"
+                (keyup)="onKeyUp($event)"
+                (keyup.enter)="salvarValor(campoInput.value)"
+                (blur)="salvarValor(campoInput.value)"
+                #campoInput
+                />
+
+            <p>Valor Atual: {{ valorAtual }}</p>
+            <p>Valor Salvo: {{ valorSalvo }}</p>
+
+            <br>
+
+            <span
+                (mouseover)="onMouseOverOut()"
+                (mouseout)="onMouseOverOut()"
+                [class.highlight]="isMouseOver"
+            >
+                Passe o mouse aqui
+            </span>
+        </div>
     </article>
 
 </section>
